@@ -1,0 +1,70 @@
+
+  -- Hello World Example 
+ 
+  var       g_var:integer
+ 
+  function main(): integer
+  begin
+ 
+  -- Variable Declaration Area
+  var szMsg:string;
+  var szName:string ;
+  var szAddr:string ;
+  var szFirst:string;
+  var szSecond:string;
+  var age:integer   ;
+  var total:integer  ;
+  var len:integer;
+  
+  
+  
+  -- Action Goes Here!
+ 
+  szMsg:="Please Enter Your Name:";
+  write(szMsg);
+  read(szName);
+  szMsg:="Please Enter you Address:";
+  write(szMsg);
+  read(szAddr);
+  szMsg:="Please Enter you Age:";
+  write(szMsg);
+  read(age);
+  
+   szMsg:="Please enter you GPA:";
+  write(szMsg);
+  read(total);
+  total:=total*total- total/total- total+total/2;
+  write(total);
+  
+  
+  szMsg:= "Your Name is :" + szName + "And your Address is :" + szAddr ;
+  write(szMsg);
+  szMsg:= "Your Age is :";
+  write(szMsg);
+  write(age);
+  szMsg:=" Your GPA is :";
+  write(szMsg);
+  write(total);
+  
+  
+  --len:=strlen(szName);
+  szMsg:="\nThe length of your name is: ";
+  write(szMsg);
+  write(len);
+  szMsg:=" character";
+  write(szMsg);
+  
+  szFirst:="deja" ;
+  szSecond:="Vu";
+  
+  szMsg:= "\n"+ szFirst + szSecond +"\n";
+  write(szMsg);
+  -- szMsg:=strcat(strcat(szFirst,szSecond),"\n");
+  write(szMsg);
+  return(0);
+ 
+ 
+ 
+  end
+ 
+                                                     

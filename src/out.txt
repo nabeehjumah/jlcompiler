@@ -1,0 +1,68 @@
+
+.data
+a: .word
+
+.data
+v: .word
+ li $t0,18
+ sw $t0,v
+
+.text
+f:
+ push $ra
+ addui $fp,$sp,16
+ li $t0,1
+ push $t0
+ pop $t0
+ sw $t0,16($fp)
+label0001:
+ li $t0,2
+ push $t0
+ pop $t0
+ sw $t0,0($fp)
+ li $t0,2
+ push $t0
+ pop $t1
+ lw $t0,16($fp)
+ beq $t0,$t1,label0002
+ lw $t0,16($fp)
+ addiu $t0,1
+ sw $t0,16($fp)
+ j label0001
+label0002:
+ li $t0,12
+ push $t0
+ pop $t0
+ sw $t0,20($fp)
+ pop $s0
+ move $sp,$fp
+ li $t0,1
+ push $t0
+ j ($s0)
+ pop $t0
+ move $sp,$fp
+ j ($t0)
+
+
+.text
+pp:
+ push $ra
+ addui $fp,$sp,4
+ li $t0,1
+ push $t0
+ li $t0,1
+ push $t0
+ j label0004
+.data
+label0003:asciiz "a"
+.text
+label0004
+ la $t0,label0003
+ push $t0
+ jal f
+ pop $t0
+ sw $t0,a
+ pop $t0
+ move $sp,$fp
+ j ($t0)
+
